@@ -1,0 +1,10 @@
+# Block direct web access to the Yotpo debug log.
+# This file contains API request payloads and should never be publicly readable.
+<Files "yotpo_debug.txt">
+    Require all denied
+</Files>
+
+# Also block the old JSON debug sample
+<Files "yotpo_debug.json">
+    Require all denied
+</Files>

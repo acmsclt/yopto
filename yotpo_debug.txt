@@ -1,0 +1,72 @@
+------------------------------------------------------------
+[2026-03-08 06:32:53] POST https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/products
+PAYLOAD : {"product":{"external_id":"PROD-101","name":"Premium Wireless Headphones","url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101","image_url":"https:\/\/placehold.co\/400x300\/1a1a2e\/e0e0e0?text=Product","price":149.99,"currency":"GBP","description":"Premium Wireless Headphones"}}
+HTTP     : 409
+RESPONSE : {"errors":[{"message":"product already exists"}]}
+
+CURL CMD :
+curl -s -X POST \
+  -H 'Content-Type: application/json' \
+  -H 'X-Yotpo-Token: 8nKGn9VKUPPmoIFiG2liuVL4687srpLBd7Kq2pnp' \
+  -d '{"product":{"external_id":"PROD-101","name":"Premium Wireless Headphones","url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101","image_url":"https:\/\/placehold.co\/400x300\/1a1a2e\/e0e0e0?text=Product","price":149.99,"currency":"GBP","description":"Premium Wireless Headphones"}}' \
+  'https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/products'
+------------------------------------------------------------
+[2026-03-08 06:32:53] POST https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/orders
+PAYLOAD : {"order":{"external_id":"ORD-1772951572","payment_status":"paid","order_date":"2026-03-08T06:32:53Z","fulfillment_date":"2026-03-08T06:32:53Z","fulfillment_status":"success","currency":"GBP","total_price":149.99,"customer":{"external_id":"acmsclt@gmail.com","email":"acmsclt@gmail.com","first_name":"muhammedshareef","last_name":"AC"},"line_items":[{"external_product_id":"PROD-101","name":"Premium Wireless Headphones","price":149.99,"quantity":1,"image_url":"https:\/\/placehold.co\/400x300\/1a1a2e\/e0e0e0?text=Product","product_url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101"}]}}
+HTTP     : 201
+RESPONSE : {"order":{"yotpo_id":9223517866}}
+
+CURL CMD :
+curl -s -X POST \
+  -H 'Content-Type: application/json' \
+  -H 'X-Yotpo-Token: 8nKGn9VKUPPmoIFiG2liuVL4687srpLBd7Kq2pnp' \
+  -d '{"order":{"external_id":"ORD-1772951572","payment_status":"paid","order_date":"2026-03-08T06:32:53Z","fulfillment_date":"2026-03-08T06:32:53Z","fulfillment_status":"success","currency":"GBP","total_price":149.99,"customer":{"external_id":"acmsclt@gmail.com","email":"acmsclt@gmail.com","first_name":"muhammedshareef","last_name":"AC"},"line_items":[{"external_product_id":"PROD-101","name":"Premium Wireless Headphones","price":149.99,"quantity":1,"image_url":"https:\/\/placehold.co\/400x300\/1a1a2e\/e0e0e0?text=Product","product_url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101"}]}}' \
+  'https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/orders'
+------------------------------------------------------------
+[2026-03-08 11:58:22] POST https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/products
+PAYLOAD : {"product":{"external_id":"PROD-101","name":"Premium Wireless Headphones","url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101","image_url":"https:\/\/placehold.co\/400x300\/1a1a2e\/e0e0e0?text=Product","price":149.99,"currency":"GBP","description":"Premium Wireless Headphones"}}
+HTTP     : 409
+RESPONSE : {"errors":[{"message":"product already exists"}]}
+
+CURL CMD :
+curl -s -X POST \
+  -H 'Content-Type: application/json' \
+  -H 'X-Yotpo-Token: 8nKGn9VKUPPmoIFiG2liuVL4687srpLBd7Kq2pnp' \
+  -d '{"product":{"external_id":"PROD-101","name":"Premium Wireless Headphones","url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101","image_url":"https:\/\/placehold.co\/400x300\/1a1a2e\/e0e0e0?text=Product","price":149.99,"currency":"GBP","description":"Premium Wireless Headphones"}}' \
+  'https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/products'
+------------------------------------------------------------
+[2026-03-08 11:58:22] POST https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/orders
+PAYLOAD : {"order":{"external_id":"ORD-1772971101","payment_status":"paid","order_date":"2026-03-08T11:58:22Z","fulfillment_date":"2026-03-08T11:58:22Z","fulfillment_status":"success","currency":"GBP","total_price":149.99,"customer":{"external_id":"acmsclt@gmail.com","email":"acmsclt@gmail.com","first_name":"muhammedshareef","last_name":"AC"},"line_items":[{"external_product_id":"PROD-101","name":"Premium Wireless Headphones","price":149.99,"quantity":1,"image_url":"https:\/\/placehold.co\/400x300\/1a1a2e\/e0e0e0?text=Product","product_url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101"}]}}
+HTTP     : 201
+RESPONSE : {"order":{"yotpo_id":9223955490}}
+
+CURL CMD :
+curl -s -X POST \
+  -H 'Content-Type: application/json' \
+  -H 'X-Yotpo-Token: 8nKGn9VKUPPmoIFiG2liuVL4687srpLBd7Kq2pnp' \
+  -d '{"order":{"external_id":"ORD-1772971101","payment_status":"paid","order_date":"2026-03-08T11:58:22Z","fulfillment_date":"2026-03-08T11:58:22Z","fulfillment_status":"success","currency":"GBP","total_price":149.99,"customer":{"external_id":"acmsclt@gmail.com","email":"acmsclt@gmail.com","first_name":"muhammedshareef","last_name":"AC"},"line_items":[{"external_product_id":"PROD-101","name":"Premium Wireless Headphones","price":149.99,"quantity":1,"image_url":"https:\/\/placehold.co\/400x300\/1a1a2e\/e0e0e0?text=Product","product_url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101"}]}}' \
+  'https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/orders'
+------------------------------------------------------------
+[2026-03-08 11:58:36] POST https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/products
+PAYLOAD : {"product":{"external_id":"PROD-101","name":"Premium Wireless Headphones","url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101","image_url":"https:\/\/placehold.co\/600x400\/1a1a2e\/e0e0e0?text=Headphones","price":149.99,"currency":"GBP","description":"Premium Wireless Headphones"}}
+HTTP     : 409
+RESPONSE : {"errors":[{"message":"product already exists"}]}
+
+CURL CMD :
+curl -s -X POST \
+  -H 'Content-Type: application/json' \
+  -H 'X-Yotpo-Token: 8nKGn9VKUPPmoIFiG2liuVL4687srpLBd7Kq2pnp' \
+  -d '{"product":{"external_id":"PROD-101","name":"Premium Wireless Headphones","url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101","image_url":"https:\/\/placehold.co\/600x400\/1a1a2e\/e0e0e0?text=Headphones","price":149.99,"currency":"GBP","description":"Premium Wireless Headphones"}}' \
+  'https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/products'
+------------------------------------------------------------
+[2026-03-08 11:58:37] POST https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/orders
+PAYLOAD : {"order":{"external_id":"ORD-1772971116","payment_status":"paid","order_date":"2026-03-08T11:58:36Z","fulfillment_date":"2026-03-08T11:58:36Z","fulfillment_status":"success","currency":"GBP","total_price":149.99,"customer":{"external_id":"acmsclt@gmail.com","email":"acmsclt@gmail.com","first_name":"muhammedshareef","last_name":"AC"},"line_items":[{"external_product_id":"PROD-101","name":"Premium Wireless Headphones","price":149.99,"quantity":1,"image_url":"https:\/\/placehold.co\/600x400\/1a1a2e\/e0e0e0?text=Headphones","product_url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101"}]}}
+HTTP     : 201
+RESPONSE : {"order":{"yotpo_id":9223955762}}
+
+CURL CMD :
+curl -s -X POST \
+  -H 'Content-Type: application/json' \
+  -H 'X-Yotpo-Token: 8nKGn9VKUPPmoIFiG2liuVL4687srpLBd7Kq2pnp' \
+  -d '{"order":{"external_id":"ORD-1772971116","payment_status":"paid","order_date":"2026-03-08T11:58:36Z","fulfillment_date":"2026-03-08T11:58:36Z","fulfillment_status":"success","currency":"GBP","total_price":149.99,"customer":{"external_id":"acmsclt@gmail.com","email":"acmsclt@gmail.com","first_name":"muhammedshareef","last_name":"AC"},"line_items":[{"external_product_id":"PROD-101","name":"Premium Wireless Headphones","price":149.99,"quantity":1,"image_url":"https:\/\/placehold.co\/600x400\/1a1a2e\/e0e0e0?text=Headphones","product_url":"http:\/\/localhost\/yopto\/product.php?id=PROD-101"}]}}' \
+  'https://api.yotpo.com/core/v3/stores/kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec/orders'
