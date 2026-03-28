@@ -16,12 +16,19 @@
  * ─────────────────────────────────────────────────────────────────────────────
  */
 return [
-    // ── STAGING credentials (Vape & Go Staging store) ─────────────────────────
-    'app_key'    => 'XfeuktivjjLOIz0xJSt5loX1fQ6Jw7mXN9I',
+    // ── STAGING credentials (Vape & Go Staging store — Account ID: 1772436) ───
+    // NOTE: api_secret not yet retrieved (requires MFA verification).
+    //       Using PRODUCTION credentials below until staging secret is available.
+    //
+    // When you have the staging secret, replace BOTH values with:
+    //   'app_key'    => 'XfeuktivjjLOIz0xJSt5loX1fQ6Jw7mXN9I',
+    //   'api_secret' => '<your staging secret>',
+    // ─────────────────────────────────────────────────────────────────────────
 
-    // TODO: Open https://settings.yotpo.com/#/general_settings, switch to
-    //       "Vape & Go Staging store", click "Get secret key" and paste it here.
-    'api_secret' => 'STAGING_SECRET_KEY_NEEDED',
+    // ── PRODUCTION credentials (vapeandgo.co.uk — Account ID: 1769428) ───────
+    // Temporarily active until staging secret key is retrieved via MFA.
+    'app_key'    => 'kyu1RIRD9mO3DlYPc2fkJXhRPO81cpIbtLHgH7ec',
+    'api_secret' => '7lswzL4yvwQK26x58figu4dLfnMoikvNbaZhnCD9',
 
     // Yotpo Core API base URL (v3)
     'api_base'   => 'https://api.yotpo.com/core/v3',
