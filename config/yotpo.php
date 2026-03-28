@@ -21,7 +21,7 @@ return [
     'auth_url' => 'https://api.yotpo.com/oauth/token',
 
     // Your store's base URL (used for product URLs sent to Yotpo)
-    'store_url' => 'http://localhost/yopto',
+    'store_url' => 'https://dev-env.tabsyst.com/yotpo',
 
     // Default currency
     'currency' => 'GBP',
