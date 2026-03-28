@@ -6,8 +6,19 @@
  * In production you'd call YotpoClient from a cron job / queue worker.
  */
 
-// Session MUST start before any output or require statements
+// Configure session cookie BEFORE session_start()
+// Required for HTTPS environments — without Secure flag, browsers drop the cookie.
 if (session_status() === PHP_SESSION_NONE) {
+    $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+               || ($_SERVER['SERVER_PORT'] ?? 80) == 443;
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path'     => '/',
+        'secure'   => $isHttps,
+        'httponly' => true,
+        'samesite' => 'Lax',
+    ]);
+    session_name('yotposhop');
     session_start();
 }
 
