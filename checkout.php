@@ -6,6 +6,11 @@
  *   2. Redirect to the order confirmation page (where conversion tracking fires)
  */
 
+// Session MUST start before any output or require statements
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 require_once __DIR__ . '/src/YotpoClient.php';
 $config = require __DIR__ . '/config/yotpo.php';
 $client = new YotpoClient($config);
@@ -42,18 +47,15 @@ $catalogue = [
 ];
 
 // Look up product from catalogue — fall back to first product if ID unknown
-$productId = $_GET['product_id'] ?? 'PROD-101';
-$product   = $catalogue[$productId] ?? reset($catalogue);
+$productId  = $_GET['product_id'] ?? 'PROD-101';
+$product    = $catalogue[$productId] ?? reset($catalogue);
 
-$productUrl = $config['store_url'] . '/product.php?id=' . urlencode($product['id']);
-$imageUrl   = $product['image'];
+$productUrl  = $config['store_url'] . '/product.php?id=' . urlencode($product['id']);
+$imageUrl    = $product['image'];
 $productName = $product['name'];
 $price       = $product['price'];
 
-// ── CSRF token setup ────────────────────────────────────────────────────────
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+// ── Ensure a CSRF token exists in the session ─────────────────────────────────
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
@@ -64,9 +66,12 @@ $success = false;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // CSRF check — must be first
-    if (!hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'] ?? '')) {
-        http_response_code(403);
-        die('Invalid CSRF token. Please go back and try again.');
+    // If the token is missing or doesn't match, redirect back to the form.
+    // This can happen if the session expired between page load and submit.
+    if (!hash_equals($_SESSION['csrf_token'] ?? '', $_POST['csrf_token'] ?? '')) {
+        $_SESSION['csrf_error'] = 'Your session expired. Please try again.';
+        header('Location: checkout.php?product_id=' . urlencode($product['id']));
+        exit;
     }
 
     $email      = trim($_POST['email'] ?? '');
@@ -174,6 +179,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <?php foreach ($errors as $err): ?>
     <div class="alert alert-error">❌ <?= htmlspecialchars($err) ?></div>
   <?php endforeach; ?>
+
+  <?php if (!empty($_SESSION['csrf_error'])): ?>
+    <div class="alert alert-error">❌ <?= htmlspecialchars($_SESSION['csrf_error']) ?></div>
+    <?php unset($_SESSION['csrf_error']); ?>
+  <?php endif; ?>
 
   <div class="checkout-layout">
 

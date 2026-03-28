@@ -6,15 +6,18 @@
  * In production you'd call YotpoClient from a cron job / queue worker.
  */
 
+// Session MUST start before any output or require statements
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 require_once __DIR__ . '/src/YotpoClient.php';
 $config = require __DIR__ . '/config/yotpo.php';
 
 $client = new YotpoClient($config);
 
-// ── CSRF token setup ────────────────────────────────────────────────────────
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+// ── Ensure a CSRF token exists in the session ─────────────────────────────────
+
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
