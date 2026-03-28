@@ -17,7 +17,7 @@
  */
 return [
     // ── STAGING credentials (Vape & Go Staging store — Account ID: 1772436) ───
-    'app_key'    => 'XfeuktivjjLOIz0xJSt5loX1fQ6Jw7mXN9I',
+    'app_key'    => 'XfeuktivjjLOIz0xJSt5loX1fQ6Jw7mXN9L0M9E1',
     'api_secret' => 'gPJhPs9Bu8IUeTHQI8ejDtnYlbSG7rA9MzYEdOUM',
     // ─────────────────────────────────────────────────────────────────────────
 
